@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.example</groupId>
+    <artifactId>test_task</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+
+    <properties>
+
+        <java.version>1.8</java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <resource.encoding>UTF-8</resource.encoding>
+
+        <!--Плагины-->
+        <maven-compiler-plugin.version>3.8.0</maven-compiler-plugin.version>
+        <maven-surefire-plugin.version>3.0.0-M3</maven-surefire-plugin.version>
+
+        <!--Бибилотеки-->
+        <aspectj.version>1.9.4</aspectj.version>
+        <allure.version>2.13.3</allure.version>
+        <log4j.version>2.13.3</log4j.version>
+        <junit.version>5.6.2</junit.version>
+        <junit-platform.version>1.6.2</junit-platform.version>
+        <assertj.version>3.17.2</assertj.version>
+        <lombok.version>1.18.12</lombok.version>
+        <io.rest-assured.version>4.2.0</io.rest-assured.version>
+        <fasterxml.jackson.version>2.10.3</fasterxml.jackson.version>
+        <org.springframework.version>5.1.0.RELEASE</org.springframework.version>
+        <org.json.version>20190722</org.json.version>
+        <oracle.jdbc.version>12.1.0.2</oracle.jdbc.version>
+
+    </properties>
+
+    <dependencies>
+
+        <!--JUnit-->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>${junit.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>${junit.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.vintage</groupId>
+            <artifactId>junit-vintage-engine</artifactId>
+            <version>${junit.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.platform</groupId>
+            <artifactId>junit-platform-launcher</artifactId>
+            <version>${junit-platform.version}</version>
+        </dependency>
+        <!-- AssertJ -->
+        <dependency>
+            <groupId>org.assertj</groupId>
+            <artifactId>assertj-core</artifactId>
+            <version>${assertj.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <!--Allure-->
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-junit5</artifactId>
+            <version>${allure.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.junit.jupiter</groupId>
+                    <artifactId>junit-jupiter</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-rest-assured</artifactId>
+            <version>${allure.version}</version>
+        </dependency>
+
+        <!--        данный блок позволяет в аллюр отчёте логировать все проверки assertj, к сожалению излишне подробно, немного тормозит(-->
+        <!--        <dependency>-->
+        <!--            <groupId>io.qameta.allure</groupId>-->
+        <!--            <artifactId>allure-assertj</artifactId>-->
+        <!--            <version>${allure.version}</version>-->
+        <!--            <exclusions>-->
+        <!--                <exclusion>-->
+        <!--                    <groupId>org.assertj</groupId>-->
+        <!--                    <artifactId>assertj-core</artifactId>-->
+        <!--                </exclusion>-->
+        <!--            </exclusions>-->
+        <!--        </dependency>-->
+        <!-- Logger -->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-slf4j-impl</artifactId>
+            <version>${log4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+            <version>${log4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>${log4j.version}</version>
+        </dependency>
+        <!--REST-->
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>rest-assured</artifactId>
+            <version>${io.rest-assured.version}</version>
+        </dependency>
+        <!-- Auto Getter Setter-->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+        </dependency>
+        <!--DB-->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jdbc</artifactId>
+            <version>${org.springframework.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.oracle</groupId>
+            <artifactId>ojdbc7</artifactId>
+            <version>${oracle.jdbc.version}</version>
+        </dependency>
+        <!-- Other -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+            <version>${fasterxml.jackson.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>${fasterxml.jackson.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-annotations</artifactId>
+            <version>${fasterxml.jackson.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>${org.json.version}</version>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <plugins>
+<!--            <plugin>-->
+<!--                <artifactId>maven-compiler-plugin</artifactId>-->
+<!--                <version>3.1</version>-->
+<!--                <configuration>-->
+<!--                    <source>1.7</source>-->
+<!--                    <target>1.7</target>-->
+<!--                    <fork>true</fork>-->
+<!--                    <executable>C:\Program Files\Java\jdk1.8.0_251\bin\javac</executable>-->
+<!--                </configuration>-->
+<!--            </plugin>-->
+
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven-compiler-plugin.version}</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${maven-surefire-plugin.version}</version>
+                <configuration>
+                    <forkCount>10</forkCount>
+                    <reuseForks>false</reuseForks>
+                    <testFailureIgnore>false</testFailureIgnore>
+                    <!--                    <testFailureIgnore>true</testFailureIgnore>-->
+                    <shutdown>kill</shutdown> <!-- Use it if required-->
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                    <argLine>
+                        -Xmx1024m
+                        -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
+                    </argLine>
+                    <properties>
+                        <configurationParameters>
+                            junit.jupiter.testinstance.lifecycle.default = per_method
+                            junit.jupiter.extensions.autodetection.enabled = true
+                            junit.jupiter.execution.parallel.enabled = true
+                            junit.jupiter.execution.parallel.mode.default = concurrent
+                        </configurationParameters>
+                    </properties>
+                    <systemPropertyVariables>
+                        <allure.results.directory>${project.build.directory}/allure-results</allure.results.directory>
+                    </systemPropertyVariables>
+                </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.aspectj</groupId>
+                        <artifactId>aspectjweaver</artifactId>
+                        <version>${aspectj.version}</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+
+            <plugin>
+                <groupId>io.qameta.allure</groupId>
+                <artifactId>allure-maven</artifactId>
+                <version>2.10.0</version>
+                <configuration>
+                    <!--resultsDirectory>${project.build.directory}/allure-results</resultsDirectory-->
+                    <reportVersion>${allure.version}</reportVersion>
+                    <allureDownloadUrl>
+                        https://repo.maven.apache.org/maven2/io/qameta/allure/allure-commandline/%s/allure-commandline-%s.zip
+                    </allureDownloadUrl>
+                </configuration>
+            </plugin>
+
+        </plugins>
+    </build>
+
+
+</project>
