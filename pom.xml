@@ -130,11 +130,11 @@
             <artifactId>spring-jdbc</artifactId>
             <version>${org.springframework.version}</version>
         </dependency>
-        <dependency>
-            <groupId>com.oracle</groupId>
-            <artifactId>ojdbc7</artifactId>
-            <version>${oracle.jdbc.version}</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>com.oracle</groupId>-->
+<!--            <artifactId>ojdbc7</artifactId>-->
+<!--            <version>${oracle.jdbc.version}</version>-->
+<!--        </dependency>-->
         <!-- Other -->
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
