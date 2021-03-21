@@ -13,7 +13,6 @@ public class GetSuperHeroTests {
     public void getTest() {
         List<SuperHero> response = requestGetSuperHeroStep(200);
         System.out.println("33333");
-        System.out.println("3335555");
     }
 
 //    @Test
