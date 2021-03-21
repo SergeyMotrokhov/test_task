@@ -12,8 +12,6 @@ public class GetSuperHeroTests {
     @Test
     public void getTest() {
         List<SuperHero> response = requestGetSuperHeroStep(200);
-        System.out.println("123");
-        System.out.println("!!!!!!!!!!");
     }
 
 //    @Test
